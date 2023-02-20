@@ -1,3 +1,4 @@
+using System.Reflection;
 using Basket.API.GrpcServices;
 using Basket.API.Repositories;
 using Discount.Grpc.Services;
@@ -25,6 +26,8 @@ builder.Services.AddMassTransit(config =>
         cfg.Host(builder.Configuration.GetValue<string>("EventBusSettings:HostAddress"));
     });
 });
+
+builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
 
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
