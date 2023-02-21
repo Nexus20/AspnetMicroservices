@@ -61,7 +61,7 @@ public static class HostExtensions
         IServiceProvider services)
         where TContext : DbContext
     {
-        context.Database.Migrate();
+        //context.Database.Migrate();
         seeder(context, services);
     }
 }
