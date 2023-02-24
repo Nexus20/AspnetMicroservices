@@ -158,3 +158,15 @@ services:
       - ordering.api
     ports:
       - "8007:80"
+  
+  spaapigw:
+    container_name: spaapigw
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    depends_on:
+      - catalog.api
+      - basket.api
+      - discount.api
+      - ordering.api
+    ports:
+      - "8011:80"
