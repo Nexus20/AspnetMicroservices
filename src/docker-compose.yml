@@ -76,6 +76,12 @@ services:
       context: .
       dockerfile: ApiGateways/SpaApiGw/Dockerfile
 
+  aspnetrunbasicblazor:
+    image: ${DOCKER_REGISTRY-}aspnetrunbasicblazor
+    build:
+      context: .
+      dockerfile: WebApps/AspnetRunBasicBlazor/Dockerfile
+
 volumes:
   mongo_data:
   portainer_data:
